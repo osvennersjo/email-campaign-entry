@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Head from 'next/head';
 import { countries } from '../data/locations';
-import { Campaign, EmailTemplate, CampaignValidation } from '../types/campaign';
+// Removed problematic import - using inline types instead
 import { Check, Plus, X, Clock, Mail, Target, Settings } from 'lucide-react';
 
 export default function Home() {
