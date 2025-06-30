@@ -4,6 +4,30 @@ import { countries } from '../data/locations';
 // Removed problematic import - using inline types instead
 import { Check, Plus, X, Clock, Mail, Target, Settings } from 'lucide-react';
 
+interface EmailTemplate {
+  id: string;
+  content: string;
+}
+
+interface Campaign {
+  industry: string;
+  country: string;
+  city: string;
+  templates: EmailTemplate[];
+  abTestingEnabled: boolean;
+  emailsPerDay: number;
+  minInterval: number;
+  maxInterval: number;
+  startTime: string;
+  endTime: string;
+  duration: number;
+  durationType: 'days' | 'weeks' | 'months';
+}
+
+interface CampaignValidation {
+  isValid: boolean;
+  errors: string[];
+}
 export default function Home() {
   const [campaign, setCampaign] = useState<Campaign>({
     industry: '',
